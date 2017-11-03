@@ -23,7 +23,7 @@ $(document).ready(function() {
 
 var searchTerm = $("#gifaction").val();
 
-
+//401
 var queryURL = "https://api.giphy.com/v1/gifs/" + searchTerm + "api_key=dc6zaTOxFJmzC";
 
 
@@ -33,6 +33,10 @@ $.ajax({
         }).done(function(response) {
             console.log(response);
     });
+//Next, examine the console logged object to find the gif in key value pairs
+//Use jQuery to connect to div with id gifs-appear-here
+
+
 
       // //Starts my count at 0
       // var giphyCount = 0;
