@@ -15,7 +15,13 @@ $(document).ready(function() {
       
 
       $(document).on('click', ".giff", function() {
-            console.log('i clicked a button')
+            console.log('i clicked a button');
+            $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).done(function(response) {
+            console.log(response);
+    });
       });
 
       createButtons(gifs)
@@ -23,16 +29,16 @@ $(document).ready(function() {
 
 var searchTerm = $("#gifaction").val();
 
-//401
+//401+hoisted
 var queryURL = "https://api.giphy.com/v1/gifs/" + searchTerm + "api_key=dc6zaTOxFJmzC";
 
 
-$.ajax({
-          url: queryURL,
-          method: "GET"
-        }).done(function(response) {
-            console.log(response);
-    });
+// $.ajax({
+//           url: queryURL,
+//           method: "GET"
+//         }).done(function(response) {
+//             console.log(response);
+//     });
 //Next, examine the console logged object to find the gif in key value pairs
 //Use jQuery to connect to div with id gifs-appear-here
 
